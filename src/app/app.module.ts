@@ -13,6 +13,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
+import { ActionComponent } from './action/action.component';
+import { AnimationComponent } from './animation/animation.component';
+import { ComedyComponent } from './comedy/comedy.component';
+import { DocumentaryComponent } from './documentary/documentary.component';
+import { AdventureComponent } from './adventure/adventure.component';
 
   
 
@@ -22,7 +30,13 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    TrendingmovieComponent,
+    ActionComponent,
+    AnimationComponent,
+    ComedyComponent,
+    DocumentaryComponent,
+    AdventureComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +49,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     ,HttpClientModule
     ,MatCardModule
     ,MatGridListModule
+    ,MatSidenavModule
+    ,MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,36 @@
-<p>home works!</p>
+
+<div class="container">
+  
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>filmoo</span>
+    <form class="form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Search a film</mat-label>
+        <input matInput placeholder="Ex-spiderman" value="">
+      </mat-form-field>
+    </form>
+    
+  </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/trendingmovie" routerLinkActive="active">trendingmovie</a>
+      <a mat-list-item routerLink="/action" routerLinkActive="active">action</a>
+      <a mat-list-item routerLink="/adventure" routerLinkActive="active">adventure</a>
+      <a mat-list-item routerLink="/animation" routerLinkActive="active">animation</a>
+      <a mat-list-item routerLink="/comedy" routerLinkActive="active">comedy</a>
+      <a mat-list-item routerLink="/documentary" routerLinkActive="active">documentary</a>
+  
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

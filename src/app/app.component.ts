@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
    }
 
   bannerResult: any = [];
-  trendingMovieResult: any = [];
+  
   actionMovieResult: any = [];
   adventureMovieResult: any = [];
   animationMovieResult: any = [];
@@ -28,9 +28,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.bannerData();
-    this.trendingData();
-    this.actionMovie();
-    this.adventureMovie();
+    
+    
+    
     this.comedyMovie();
     this.animationMovie();
     this.documentaryMovie();
@@ -47,31 +47,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  trendingData() {
-    this.service.trendingMovieApiData().subscribe((result) => {
-      console.log(result, 'trendingresult#');
-      this.trendingMovieResult = result.results;
-      // this.trendingMovieResult
-    });
-  }
 
-  // action 
-  actionMovie() {
-    this.service.fetchActionMovies().subscribe((result) => {
-      this.actionMovieResult = result.results;
-    });
-  }
-
-
-
-
-  // adventure 
-  adventureMovie() {
-    this.service.fetchAdventureMovies().subscribe((result) => {
-      this.adventureMovieResult = result.results;
-    });
-  }
-
+  
 
   // animation 
   animationMovie() {
