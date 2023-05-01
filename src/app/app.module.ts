@@ -8,13 +8,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
   
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     ,MatButtonModule
     ,MatInputModule
     ,HttpClientModule
+    ,MatCardModule
+    ,MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
