@@ -1,1 +1,6 @@
-<p>animation works!</p>
+<div *ngFor="let item of animationMovieResult">
+    <div class="films-wrapper">
+ <img class="film-wrapper" src="https://image.tmdb.org/t/p/original/{{ item.poster_path }}" [routerLink]="['/movie',item.id]">
+ 
+ 
+ </div> 

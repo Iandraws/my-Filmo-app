@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieApiServiceService } from '../service/movie-details.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-action',
@@ -8,7 +9,11 @@ import { MovieApiServiceService } from '../service/movie-details.service';
 })
 export class ActionComponent {
   
-    constructor( private service:MovieApiServiceService) { }
+    constructor(private service:MovieApiServiceService, private title:Title,private meta:Meta ) { 
+
+      this.title.setTitle('Action Movies -ShowTime');
+      this.meta.updateTag({name:'description',content:'Action Movies -war,action,etc'});
+    }
 
 
   actionMovieResult: any = [];

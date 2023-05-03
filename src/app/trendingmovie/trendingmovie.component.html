@@ -1,14 +1,6 @@
-<mat-drawer-container>
-    <mat-card   *ngFor="let item of trendingMovieResult" class="example-card">
-        <mat-card-header>
-            <mat-card-title>{{ item.title }}</mat-card-title>
-            <mat-card-subtitle>{{ item.subtitle }}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="https://image.tmdb.org/t/p/original/{{ item.poster_path }}" alt="{{ item.alt }}">
-          <mat-card-content>
-            {{ item.content }}
-          </mat-card-content>
-          <mat-card-actions>
-          </mat-card-actions>
-    </mat-card>
-</mat-drawer-container>
+<div *ngFor="let item of trendingMovieResult">
+  <div class="films-wrapper">
+<img class="film-wrapper" src="https://image.tmdb.org/t/p/original/{{ item.poster_path }}" [routerLink]="['/movie',item.id]">
+
+</div> 
+ 

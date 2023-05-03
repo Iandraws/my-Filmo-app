@@ -6,12 +6,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span>filmoo</span>
-    <form class="form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Search a film</mat-label>
-        <input matInput placeholder="Ex-spiderman" value="">
-      </mat-form-field>
-    </form>
+    <app-search></app-search>
     
   </mat-toolbar>
 
@@ -24,6 +19,7 @@
       <a mat-list-item routerLink="/animation" routerLinkActive="active">animation</a>
       <a mat-list-item routerLink="/comedy" routerLinkActive="active">comedy</a>
       <a mat-list-item routerLink="/documentary" routerLinkActive="active">documentary</a>
+      <a mat-list-item routerLink="/search" routerLinkActive="active"></a>
   
     </mat-nav-list>
   </mat-sidenav>

@@ -21,6 +21,9 @@ import { AnimationComponent } from './animation/animation.component';
 import { ComedyComponent } from './comedy/comedy.component';
 import { DocumentaryComponent } from './documentary/documentary.component';
 import { AdventureComponent } from './adventure/adventure.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+
 
   
 
@@ -51,6 +54,9 @@ import { AdventureComponent } from './adventure/adventure.component';
     ,MatGridListModule
     ,MatSidenavModule
     ,MatListModule
+    ,ReactiveFormsModule,
+    RouterLink
+
   ],
   providers: [],
   bootstrap: [AppComponent]

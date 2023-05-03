@@ -1,1 +1,6 @@
-<p>adventure works!</p>
+<div *ngFor="let item of adventureMovieResult">
+    <div class="films-wrapper">
+ <img class="film-wrapper" src="https://image.tmdb.org/t/p/original/{{ item.poster_path }}" [routerLink]="['/movie',item.id]">
+ 
+ 
+ </div> 

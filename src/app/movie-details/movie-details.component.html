@@ -1,1 +1,15 @@
-<p>movie-details works!</p>
+<div class="container">
+    <div *ngIf="getMovieDetailResult.poster_path">
+        <img class="img"
+        src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}"
+        alt="Movie Poster" 
+        >
+    </div>
+    <div class="film-wrapper">
+        <h1 class="name">{{ getMovieDetailResult.title }}</h1>
+        <p>{{ getMovieDetailResult.overview }}</p>
+        <p>Release Date: {{ getMovieDetailResult.release_date }}</p>
+        <p>Rating: {{ getMovieDetailResult.vote_average }}</p>
+    </div>
+
+</div>
