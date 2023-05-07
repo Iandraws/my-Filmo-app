@@ -12,22 +12,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterLink } from '@angular/router';
-import { ActionComponent } from './action/action.component';
-import { AdventureComponent } from './adventure/adventure.component';
-import { AnimationComponent } from './animation/animation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComedyComponent } from './comedy/comedy.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchComponent } from './search/search.component';
 import { FilmCardComponent } from './shared/components/film-card/film-card.component';
 import { MoviesListComponent } from './shared/movies-list/movies-list.component';
-import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -35,11 +26,6 @@ import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component'
     HomeComponent,
     SearchComponent,
     MovieDetailsComponent,
-    TrendingmovieComponent,
-    ActionComponent,
-    AnimationComponent,
-    ComedyComponent,
-    AdventureComponent,
     FilmCardComponent,
     MoviesListComponent
   ],

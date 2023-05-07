@@ -20,12 +20,6 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`);
   }
 
-
-  // trendingmovieapidata 
-  trendingMovieApiData(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/trending/movie/day?api_key=${this.apikey}`);
-  }
-
   // searchmovive
   getSearchMovie(data: { movieName: string }): Observable<FilmResult> {
     console.log(data, 'movie#');
@@ -47,20 +41,7 @@ export class MovieApiServiceService {
   // getMovieCast(data: string): Observable<CastResult> {
   //   return this.httpClient.get<CastResult>(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
   // }
-  // action 
-  fetchActionMovies(): Observable<any> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`);
-  }
 
-  // adventure
-  fetchAdventureMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=12`);
-  }
-
-  // animation
-  fetchAnimationMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=16`);
-  }
 
   fetchFilms(type: FilmType, search: string): Observable<FilmResult> {
     const params = new HttpParams().set("api_key", this.apikey).set("with_genres", type.toString()).set('query', search);
@@ -77,20 +58,5 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`);
   }
 
-  // documentary
-  fetchDocumentaryMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=99`);
-  }
-
-  // science-fiction:878
-
-  fetchScienceFictionMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`);
-  }
-
-  // thriller:53
-  fetchThrillerMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
-  }
 
 }
