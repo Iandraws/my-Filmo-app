@@ -51,6 +51,9 @@ export class MovieApiServiceService {
       url = `${this.baseurl}/search/movie`;
 
     }
+    if (type === FilmType.Trending) {
+      url = `${this.baseurl}/trending`;
+    }
     return this.httpClient.get<FilmResult>(url, { params: params });
   }
 

@@ -17,8 +17,7 @@ export class MoviesListComponent {
   films$: Observable<Film[]>;
 
   constructor(private movieApiServiceService: MovieApiServiceService, private title: Title, private meta: Meta, private route: ActivatedRoute, private searchService: SearchService) {
-    this.title.setTitle('Documentary Movies -ShowTime');
-    this.meta.updateTag({ name: 'description', content: 'Documentary Movies -war,action,etc' });
+   
   }
 
   ngOnInit(): void {

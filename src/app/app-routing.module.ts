@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: "trendingmovie", component: MoviesListComponent,
     data: {
-      type: FilmType.Trendingmovie,
+      type: FilmType,
+      trending:true,
       title: 'trendingmovie',
       descirption: 'trendingmovie Movies ,etc'
     }
