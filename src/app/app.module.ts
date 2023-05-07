@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -18,12 +18,12 @@ import { AnimationComponent } from './animation/animation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComedyComponent } from './comedy/comedy.component';
-import { DocumentaryComponent } from './documentary/documentary.component';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchComponent } from './search/search.component';
-import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
 import { FilmCardComponent } from './shared/components/film-card/film-card.component';
+import { MoviesListComponent } from './shared/movies-list/movies-list.component';
+import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
 
 
 
@@ -39,15 +39,16 @@ import { FilmCardComponent } from './shared/components/film-card/film-card.compo
     ActionComponent,
     AnimationComponent,
     ComedyComponent,
-    DocumentaryComponent,
     AdventureComponent,
-    FilmCardComponent
+    FilmCardComponent,
+    MoviesListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
-    , MatToolbarModule
+    , MatToolbarModule,
+    FormsModule
     , MatIconModule
     , MatButtonModule
     , MatInputModule

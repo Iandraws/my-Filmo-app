@@ -1,0 +1,7 @@
+<ng-container *ngFor="let film of films$ | async">
+    <app-film-card
+        *ngIf="film.poster_path"
+        [film]="film"
+    ></app-film-card>
+
+</ng-container>

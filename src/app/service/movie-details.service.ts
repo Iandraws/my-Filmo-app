@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FilmResult } from '../shared/models/film.model';
+import { CastResult, FilmResult } from '../shared/models/film.model';
+import { FilmType } from '../shared/models/Film-type.enum';
 @Injectable({
   providedIn: 'root'
 })
@@ -42,17 +43,17 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`)
   }
 
-  // getMovieCast
-  getMovieCast(data: string): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
-  }
+  // // getMovieCast
+  // getMovieCast(data: string): Observable<CastResult> {
+  //   return this.httpClient.get<CastResult>(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
+  // }
   // action 
   fetchActionMovies(): Observable<any> {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`);
   }
 
   // adventure
-  fetchAdventureMovies(): Observable<any> {
+  fetchAdventureMovies(): Observable<FilmResult> {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=12`);
   }
 
@@ -61,7 +62,17 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=16`);
   }
 
-  // comedy
+  fetchFilms(type: FilmType, search: string): Observable<FilmResult> {
+    const params = new HttpParams().set("api_key", this.apikey).set("with_genres", type.toString()).set('query', search);
+
+    let url = `${this.baseurl}/discover/movie`;
+    if (search) {
+      url = `${this.baseurl}/search/movie`;
+
+    }
+    return this.httpClient.get<FilmResult>(url, { params: params });
+  }
+
   fetchComedyMovies(): Observable<FilmResult> {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`);
   }

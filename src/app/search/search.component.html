@@ -1,16 +1,10 @@
 <div class="form">
-    <form
-        [formGroup]="searchMovieForm"
-        (ngSubmit)="submitSearchMovieForm()"
-    >
-        <mat-form-field class="field">
-            <mat-label>Search a film</mat-label>
-            <input
-                matInput
-                placeholder="Ex-spiderman"
-                formControlName="movieName"
-                value="movieName.value"
-            >
-        </mat-form-field>
-    </form>
+    <mat-form-field class="field">
+        <mat-label>Search a film</mat-label>
+        <input
+            matInput
+            [(ngModel)]="searchService.search"
+            placeholder="Ex-spiderman"
+        >
+    </mat-form-field>
 </div>
