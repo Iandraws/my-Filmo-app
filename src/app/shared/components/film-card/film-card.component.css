@@ -1,0 +1,17 @@
+:host {
+    height: 250px;
+    width: 250px;
+    background-color: red;
+    margin: 16px;
+    display: flex;
+    position: relative;
+    box-shadow: 22px 19px 46px black;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}

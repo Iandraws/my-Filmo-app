@@ -1,31 +1,32 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterLink } from '@angular/router';
+import { ActionComponent } from './action/action.component';
+import { AdventureComponent } from './adventure/adventure.component';
+import { AnimationComponent } from './animation/animation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
-import { ActionComponent } from './action/action.component';
-import { AnimationComponent } from './animation/animation.component';
 import { ComedyComponent } from './comedy/comedy.component';
 import { DocumentaryComponent } from './documentary/documentary.component';
-import { AdventureComponent } from './adventure/adventure.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { SearchComponent } from './search/search.component';
+import { TrendingmovieComponent } from './trendingmovie/trendingmovie.component';
+import { FilmCardComponent } from './shared/components/film-card/film-card.component';
 
 
-  
+
 
 
 @NgModule({
@@ -39,22 +40,23 @@ import { RouterLink } from '@angular/router';
     AnimationComponent,
     ComedyComponent,
     DocumentaryComponent,
-    AdventureComponent
+    AdventureComponent,
+    FilmCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
-    ,MatToolbarModule
-    ,MatIconModule
-    ,MatButtonModule
-    ,MatInputModule
-    ,HttpClientModule
-    ,MatCardModule
-    ,MatGridListModule
-    ,MatSidenavModule
-    ,MatListModule
-    ,ReactiveFormsModule,
+    , MatToolbarModule
+    , MatIconModule
+    , MatButtonModule
+    , MatInputModule
+    , HttpClientModule
+    , MatCardModule
+    , MatGridListModule
+    , MatSidenavModule
+    , MatListModule
+    , ReactiveFormsModule,
     RouterLink
 
   ],
