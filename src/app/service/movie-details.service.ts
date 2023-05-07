@@ -54,9 +54,7 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(url, { params: params });
   }
 
-  fetchComedyMovies(): Observable<FilmResult> {
-    return this.httpClient.get<FilmResult>(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=35`);
-  }
+ 
 
 
 }
