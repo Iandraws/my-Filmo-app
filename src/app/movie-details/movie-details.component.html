@@ -1,15 +1,32 @@
-<div class="container">
-    <div *ngIf="getMovieDetailResult.poster_path">
-        <img class="img"
-        src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}"
-        alt="Movie Poster" 
-        >
-    </div>
-    <div class="film-wrapper">
-        <h1 class="name">{{ getMovieDetailResult.title }}</h1>
-        <p>{{ getMovieDetailResult.overview }}</p>
-        <p>Release Date: {{ getMovieDetailResult.release_date }}</p>
-        <p>Rating: {{ getMovieDetailResult.vote_average }}</p>
-    </div>
 
+<div *ngIf="getMovieDetailResult.poster_path">
+    <div class="movie-details">
+        <div class="movie-details__poster">
+        <img class="movie-details__poster-image"
+            [src]="
+            'https://image.tmdb.org/t/p/w500' + getMovieDetailResult.poster_path
+            "
+            alt="Movie poster"
+        />
+        </div>
+        <div class="movie-details__info">
+        <h1 class="movie-details__title">
+            {{ getMovieDetailResult.title }}
+        </h1>
+        <div class="movie-details__overview">
+            {{ getMovieDetailResult.overview }}
+        </div>
+        <div class="movie-details__genres">
+            <span *ngFor="let genre of getMovieDetailResult.genres">
+            {{ getMovieDetailResult.name }}
+            </span>
+        </div>
+        <div class="movie-details__release-date">
+            {{ getMovieDetailResult.release_date }}
+        </div>
+        <div class="movie-details__vote-average">
+            {{ getMovieDetailResult.vote_average }}
+        </div>
+        </div>
+    </div>
 </div>
