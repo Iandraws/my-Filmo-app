@@ -19,25 +19,20 @@ Film App is a web application that allows users to search for and store informat
 To get started with the Film App, follow these steps:
 
 1. Clone the repository to your local machine:
-   ```shell
-  https://github.com/Iandraws/my-Filmo-app
-  Install the dependencies:
+   ```shell  https://github.com/Iandraws/my-Filmo-app
+  
+ 2.  Install the dependencies:
+  
 
-shell
-Copy code
-npm install
+ ```shell npm install  ``` 
 Obtain an API key from the OMDB API website.
 
-Create a .env file in the root directory of the project and add your API key:
+3. Create a .env file in the root directory of the project and add your API key:
 
-shell
-Copy code
-REACT_APP_OMDB_API_KEY=your-api-key
+
+  ```REACT_APP_OMDB_API_KEY=your-api-key ``` 
 Start the development server:
-
-shell
-Copy code
-npm start
+  ```npm start  ``` 
 Open your web browser and visit http://localhost:3000 to access the Film App.
 
 Contributing
