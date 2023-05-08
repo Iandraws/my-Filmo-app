@@ -19,7 +19,7 @@ Film App is a web application that allows users to search for and store informat
 To get started with the Film App, follow these steps:
 
 1. Clone the repository to your local machine:
-   ```shell  https://github.com/Iandraws/my-Filmo-app
+   ```shell  https://github.com/Iandraws/my-Filmo-app ``` 
   
  2.  Install the dependencies:
   
