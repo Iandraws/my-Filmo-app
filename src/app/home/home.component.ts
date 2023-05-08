@@ -21,8 +21,7 @@ export class HomeComponent {
     { path: 'animation', label: "animation" },
     { path: 'comedy', label: "comedy" },
     { path: 'documentary', label: "documentary" },
-    { path: 'search', label: "search" },
-
+   
   ]
   constructor() { }
 
