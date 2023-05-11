@@ -19,6 +19,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchComponent } from './search/search.component';
 import { FilmCardComponent } from './shared/components/film-card/film-card.component';
 import { MoviesListComponent } from './shared/movies-list/movies-list.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MoviesListComponent } from './shared/movies-list/movies-list.component'
     , MatListModule
     , ReactiveFormsModule,
     RouterLink
+    ,MatTooltipModule
 
   ],
   providers: [],

@@ -1,32 +1,36 @@
+<div class="container" *ngIf="getMovieDetailResult.poster_path">
 
-<div *ngIf="getMovieDetailResult.poster_path">
-    <div class="movie-details">
-        <div class="movie-details__poster">
-        <img class="movie-details__poster-image"
-            [src]="
-            'https://image.tmdb.org/t/p/w500' + getMovieDetailResult.poster_path
-            "
-            alt="Movie poster"
-        />
+    <div class="media-details">
+        <div class="media-details__poster">
+            <img class="img" [src]="'https://image.tmdb.org/t/p/w500' + getMovieDetailResult.poster_path "
+                alt="poster" />
+
         </div>
-        <div class="movie-details__info">
-        <h1 class="movie-details__title">
-            {{ getMovieDetailResult.title }}
-        </h1>
-        <div class="movie-details__overview">
-            {{ getMovieDetailResult.overview }}
+        <div class="media-details__info">
+            <h1 class="media-details__title">{{ getMovieDetailResult.title }}</h1>
+
+            <div class="media-details__meta">
+
+
+                <div class="genres-list">
+                    <br><br>
+
+                    <span class="genres-item" *ngFor="let genre of getMovieDetailResult.genres">
+                        <button mat-raised-button matTooltip="{{ getMovieDetailResult.title }}"
+                            aria-label="Button that displays a tooltip when focused or hovered over">
+                            {{genre.name}}
+                        </button>
+                    </span>
+                </div>
+
+            </div>
+            <div class="media-details__overview">
+                <h2 class="media-details__overview-title">Overview</h2>
+                <p class="media-details__overview-text">{{ getMovieDetailResult.overview }}</p>
+            </div>
         </div>
-        <div class="movie-details__genres">
-            <span *ngFor="let genre of getMovieDetailResult.genres">
-            {{ getMovieDetailResult.name }}
-            </span>
-        </div>
-        <div class="movie-details__release-date">
-            {{ getMovieDetailResult.release_date }}
-        </div>
-        <div class="movie-details__vote-average">
-            {{ getMovieDetailResult.vote_average }}
-        </div>
-        </div>
+
     </div>
+
+
 </div>
