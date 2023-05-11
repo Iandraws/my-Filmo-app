@@ -66,7 +66,6 @@ const routes: Routes = [
       descirption: 'adventure Movies -war,action,etc'
     }
   },
-  { path: 'search', component: SearchComponent },
   { path: 'movie/:id', component: MovieDetailsComponent }
 ];
 
