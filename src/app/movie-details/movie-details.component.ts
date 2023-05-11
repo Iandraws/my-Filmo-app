@@ -56,6 +56,7 @@ export class MovieDetailsComponent {
 
     });
   }
+  
 
  // getMovieCast(id: any) {
    //  this.service.getMovieCast(id).subscribe((result)=>{
