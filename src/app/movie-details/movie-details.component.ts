@@ -15,25 +15,24 @@ export class MovieDetailsComponent {
   constructor(private service: MovieApiServiceService, private router: ActivatedRoute, private title: Title, private meta: Meta) { }
   getMovieDetailResult: any;
   getMovieVideoResult: any;
+  getMovieCastResult: any;
+  result: any;
+  castData: [];
   ngOnInit(): void {
     let getParamId = this.router.snapshot.paramMap.get('id');
     console.log(getParamId, 'getparamid#');
-
-    this.getMovie(getParamId);
     this.getVideo(getParamId);
-    // this.getMovieCast(getParamId);
+    this.getMovie(getParamId);
+     this.getMovieCast(getParamId);
+     this.result=this.castData
   }
+ 
 
 
   getMovie(id: any) {
     this.service.getMovieDetails(id).subscribe(async (result) => {
       console.log(result, 'getmoviedetails#');
       this.getMovieDetailResult = await result;
-
-      // // updatetags
-      // this.title.setTitle(`${this.getMovieDetailResult.original_title} | ${this.getMovieDetailResult.tagline}`);
-      // this.meta.updateTag({ name: 'title', content: this.getMovieDetailResult.original_title });
-      // this.meta.updateTag({ name: 'description', content: this.getMovieDetailResult.overview });
 
       // // facebook
       // this.meta.updateTag({ property: 'og:type', content: "website" });
@@ -58,9 +57,11 @@ export class MovieDetailsComponent {
   }
   
 
- // getMovieCast(id: any) {
-   //  this.service.getMovieCast(id).subscribe((result)=>{
-    //   console.log(result,'movieCast#');
-    // });
-  //}
+ getMovieCast(id: any) {
+    this.service.getMovieCast(id).subscribe((result)=>{
+      this.getMovieCastResult=result.cast;
+      console.log(result,'movieCast#');
+    });
+  }
+  displayedColumns: string[] = ['name', 'gender', 'known_for_department',];
 }

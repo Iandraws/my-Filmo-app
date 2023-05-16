@@ -20,6 +20,8 @@ import { SearchComponent } from './search/search.component';
 import { FilmCardComponent } from './shared/components/film-card/film-card.component';
 import { MoviesListComponent } from './shared/movies-list/movies-list.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     , ReactiveFormsModule,
     RouterLink
     ,MatTooltipModule
+    ,MatTableModule
 
   ],
   providers: [],

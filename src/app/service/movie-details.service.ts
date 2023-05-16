@@ -37,10 +37,10 @@ export class MovieApiServiceService {
     return this.httpClient.get<FilmResult>(`${this.baseurl}/movie/${data}/videos?api_key=${this.apikey}`)
   }
 
-  // // getMovieCast
-  // getMovieCast(data: string): Observable<CastResult> {
-  //   return this.httpClient.get<CastResult>(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
-  // }
+  // getMovieCast
+  getMovieCast(data: string): Observable<CastResult> {
+    return this.httpClient.get<CastResult>(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
+  }
 
 
   fetchFilms(type: FilmType, search: string): Observable<FilmResult> {
