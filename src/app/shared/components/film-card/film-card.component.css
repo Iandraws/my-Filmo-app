@@ -8,10 +8,18 @@
     box-shadow: 22px 19px 46px black;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.5s ease;
 }
 
 img {
     height: 100%;
     width: 100%;
 }
+img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+
+
+
+

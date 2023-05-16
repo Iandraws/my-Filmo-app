@@ -8,6 +8,8 @@ import { MoviesListComponent } from './shared/movies-list/movies-list.component'
 
 const routes: Routes = [
 
+  { path: "", redirectTo: "trendingmovie", pathMatch: "full" },
+
 
   {
     path: "trendingmovie", component: MoviesListComponent,
