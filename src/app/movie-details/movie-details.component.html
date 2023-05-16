@@ -54,9 +54,15 @@
                       <td mat-cell *matCellDef="let cast">{{ cast.gender === 2 ? 'Male' : 'Female' }}</td>
                     </ng-container>
                   
-                    <ng-container matColumnDef="known_for_department">
-                      <th mat-header-cell *matHeaderCellDef>Known for Department</th>
-                      <td mat-cell *matCellDef="let cast">{{ cast.known_for_department }}</td>
+                    <ng-container matColumnDef="is Acting">
+                        <th mat-header-cell *matHeaderCellDef> is Acting </th>
+                        <td mat-cell *matCellDef="let cast">
+                          <img class="status-icon" *ngIf="cast.known_for_department === 'Acting'; else notActingStatus" [src]="greenIconPath" alt="Green Icon" />
+                          <ng-template #notActingStatus>
+                            <img class="status-icon" [src]="redIconPath" alt="Red Icon" />
+                          </ng-template>
+                          
+                        </td>
                     </ng-container>
                   
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

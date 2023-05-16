@@ -27,6 +27,7 @@ export class MovieDetailsComponent {
      this.result=this.castData
   }
  
+ 
 
 
   getMovie(id: any) {
@@ -55,6 +56,8 @@ export class MovieDetailsComponent {
 
     });
   }
+  greenIconPath = 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Green_icon.svg';
+redIconPath = 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Red_Light_Icon.svg';
   
 
  getMovieCast(id: any) {
@@ -63,5 +66,5 @@ export class MovieDetailsComponent {
       console.log(result,'movieCast#');
     });
   }
-  displayedColumns: string[] = ['name', 'gender', 'known_for_department',];
+  displayedColumns: string[] = ['name', 'gender', 'is Acting',];
 }
