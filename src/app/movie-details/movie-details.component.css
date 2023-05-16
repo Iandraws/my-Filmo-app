@@ -36,7 +36,7 @@
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #eee;
+  background-color: white;
     box-shadow: 0 0 10px #ccc;
 
 }
@@ -108,12 +108,14 @@ left: 0;
 height: 300px;
 overflow: auto;
 width: 100%;
+
 }
 
 
 
 table {
     width: 100%;
+    background-color: #eee;
   }
   
   .mat-elevation-z8 {
