@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponentComponent } from '../login.component/login.component.component';
 
 interface Route {
   path: string,
@@ -23,6 +25,13 @@ export class HomeComponent {
     { path: 'documentary', label: "documentary" },
    
   ]
-  constructor() { }
+  constructor( private dialog:MatDialog) { }
+  openLoginDialog(): void {
+    this.dialog.open(LoginComponentComponent, {
+        width: '300px',
+        // Additional configuration options for the dialog...
+    });
+  }
+
 
 }

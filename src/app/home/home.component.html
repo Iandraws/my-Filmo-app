@@ -6,7 +6,12 @@
         </button>
         <span>filmoooooooo</span>
         <app-search></app-search>
+        <span class="spacer"></span>
+        <button class="login" mat-icon-button (click)="openLoginDialog()">
+            <mat-icon aria-hidden="false" aria-label="Login">person</mat-icon>
+        </button>
     </mat-toolbar>
+
     <mat-sidenav-container>
         <mat-sidenav [(opened)]="opened" mode="side">
             <mat-nav-list>

@@ -35,3 +35,23 @@
   position: fixed;
 
 }
+.login{
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: primary;
+  color: #fff;
+  font-size: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+.login:hover{
+  background-color: #29b0ef;
+  color: #fff;
+}
+
+
+ 
+

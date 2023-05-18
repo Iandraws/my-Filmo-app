@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    margin: 20px;
+  }
+  
+  mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

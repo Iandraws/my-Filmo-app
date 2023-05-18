@@ -21,6 +21,12 @@ import { FilmCardComponent } from './shared/components/film-card/film-card.compo
 import { MoviesListComponent } from './shared/movies-list/movies-list.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatTableModule } from '@angular/material/table';
+import { LoginComponentComponent } from './login.component/login.component.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+
 
 
 @NgModule({
@@ -30,7 +36,8 @@ import { MatTableModule } from '@angular/material/table';
     SearchComponent,
     MovieDetailsComponent,
     FilmCardComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,8 @@ import { MatTableModule } from '@angular/material/table';
     RouterLink
     ,MatTooltipModule
     ,MatTableModule
+    ,MatFormFieldModule
+    ,MatDialogModule
 
   ],
   providers: [],
