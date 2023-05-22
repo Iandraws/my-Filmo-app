@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { LoginComponentComponent } from './login.component/login.component.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -59,6 +60,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ,MatTableModule
     ,MatFormFieldModule
     ,MatDialogModule
+    ,MatSnackBarModule
+    ,
 
   ],
   providers: [],

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SearchService } from '../shared/services/search.service';
+import { SearchService } from '../service/search.service';
 
 @Component({
   selector: 'app-search',

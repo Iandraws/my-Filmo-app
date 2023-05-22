@@ -1,10 +1,30 @@
 <h2>Login</h2>
-<form>
-  <mat-form-field>
-    <input matInput placeholder="Email" type="email">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Password" type="password">
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Login</button>
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="Email"
+            type="email"
+            [(ngModel)]="identifier"
+            name="identifier"
+            required
+        >
+    </mat-form-field>
+    <mat-form-field>
+        <input
+            matInput
+            placeholder="Password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+        >
+    </mat-form-field>
+    <button 
+        mat-raised-button
+        color="primary"
+        type="submit"
+    >
+        Login
+    </button>
 </form>

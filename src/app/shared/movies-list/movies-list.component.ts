@@ -5,7 +5,7 @@ import { MovieApiServiceService } from 'src/app/service/movie-details.service';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { FilmType } from '../models/Film-type.enum';
-import { SearchService } from '../services/search.service';
+import { SearchService } from '../../service/search.service';
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
