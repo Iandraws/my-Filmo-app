@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl = 'https://demo.parklolo.com/api';
   private localStorageKey = 'accessToken';
+  isLoggedIn: any;
 
   constructor(private http: HttpClient) { }
 
