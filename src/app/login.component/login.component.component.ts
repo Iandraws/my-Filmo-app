@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { finalize } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterComponent } from '../register/register.component'; // Replace with the actual path to your register component
+
 
 
 @Component({
@@ -16,7 +19,7 @@ export class LoginComponentComponent implements OnInit {
   snackbarMessage: string = ''; // Variable to hold the Snackbar message
   snackBar: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,private dialog: MatDialog) {}
   ngOnInit(): void {
     this.checkLogin();
   }
@@ -70,5 +73,14 @@ export class LoginComponentComponent implements OnInit {
       this.isLogedIn = false;
       this.isLoading = false;
     }
+  }
+  openRegisterDialog(): void {
+    this.dialog.open(RegisterComponent, {
+      width: '400px', 
+      height: '500px',
+      disableClose: false, 
+      autoFocus: true,
+      data: { name: 'Register' },
+    });
   }
 }

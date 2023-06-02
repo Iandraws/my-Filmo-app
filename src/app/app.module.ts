@@ -25,6 +25,7 @@ import { LoginComponentComponent } from './login.component/login.component.compo
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -38,7 +39,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MovieDetailsComponent,
     FilmCardComponent,
     MoviesListComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

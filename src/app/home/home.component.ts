@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponentComponent } from '../login.component/login.component.component';
+import { RegisterComponent } from '../register/register.component';
 
 interface Route {
   path: string,
@@ -29,7 +30,17 @@ export class HomeComponent {
   openLoginDialog(): void {
     this.dialog.open(LoginComponentComponent, {
         width: '300px',
-        // Additional configuration options for the dialog...
+        
+    });
+  }
+  toggleSidebar(): void {
+    this.opened = !this.opened;
+  }
+  openRegisterDialog(): void {
+    this.dialog.open(RegisterComponent, {
+        width: '400px',
+        height: '500px'
+        
     });
   }
 

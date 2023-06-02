@@ -10,7 +10,11 @@
         <button class="login" mat-icon-button (click)="openLoginDialog()">
             <mat-icon aria-hidden="false" aria-label="Login">person</mat-icon>
         </button>
+        <button class="register" mat-icon-button (click)="openRegisterDialog()">
+            <mat-icon aria-hidden="false" aria-label="Register">person_add</mat-icon>
+        </button>
     </mat-toolbar>
+
 
     <mat-sidenav-container>
         <mat-sidenav [(opened)]="opened" mode="side">
