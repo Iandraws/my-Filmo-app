@@ -20,6 +20,7 @@ export class RegisterComponent {
   isLoading: boolean = false;
   isLogedIn: boolean = false;
   snackbarMessage: string = ''; // Variable to hold the Snackbar message
+  snackBar: any;
   isRegister: boolean = false;
 
   onSubmit(): void {
@@ -49,6 +50,10 @@ console.log(credentials);
           });
           this.isRegister = true;
           this.dialog.closeAll();
+          
+          
+
+
 
           // Redirect to the desired page or perform any other necessary actions
         },
