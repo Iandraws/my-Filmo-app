@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private apiUrl = 'https://ibrahim.parklolo.com/api';
   private localStorageKey = 'accessToken';
-  
+
   constructor(private http: HttpClient) {}
 
   login(credentials: {
@@ -46,7 +46,7 @@ export class AuthService {
   }): Observable<Object> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODYwNDQxMjksImV4cCI6MTY4NjA0NzcyOSwiY2xhaW0iOiJjYjEwODU0YS1jMWM3LTQ4YTktOTAxMC03NTE0NGI0YzJjOGUiLCJlbXBsb3llZUlkIjoiYjI4NGVhYmUtZjFjYy00YjE0LTk1YTktN2FmZDhkNTRmODhhIiwic3ViZG9tYWluIjoiaWJyYWhpbSJ9.By18uuawRX-TrXwnubug3VnqNSaAOW_ZwwbPHLrfcgY`,
+      'Authorization': `Bearer ${this.getAccessToken()}`,
 
 
     });
