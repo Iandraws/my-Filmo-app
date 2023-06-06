@@ -1,13 +1,16 @@
+import { AuthService } from './../service/auth.service';
 import { Component } from '@angular/core';
-import { AuthService } from '../service/auth.service';
+import { finalize } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-constructor( private authService: AuthService,  ) { }
+  constructor( private authService:AuthService,private snackbar:MatSnackBar,private dialog:MatDialog) {}
   displayName: string;
   username: string;
   email: string;
@@ -17,42 +20,49 @@ constructor( private authService: AuthService,  ) { }
   isLoading: boolean = false;
   isLogedIn: boolean = false;
   snackbarMessage: string = ''; // Variable to hold the Snackbar message
-  snackBar: any;
-
-
+  isRegister: boolean = false;
 
   onSubmit(): void {
     const credentials = {
-      displayName: this.displayName,
       username: this.username,
       email: this.email,
+      displayName: this.displayName,
       password: this.password,
+      active: this.active,
       isAdmin: this.isAdmin,
-      active: this.active
     };
 
-
-
     this.isLoading = true;
+console.log(credentials);
+
+   
+    
 
 
-
-
-    this.authService.register(credentials)  // <-- Register method from the AuthService
-      .subscribe({
+    this.authService
+      .register(credentials).subscribe({
         next: (response: any) => {
-          // Assuming the response contains the access token
-          const accessToken = response.accessToken; // Update the property/key name based on the actual response
-          this.authService.saveAccessToken(accessToken);
-          this.isLogedIn = true;
-          this.isLoading = false;
-          this.snackbarMessage = 'Registration successful!';
-          this.snackBar.open(this.snackbarMessage, 'Close', { duration: 3000 });
           console.log(response);
+          this.snackbarMessage = 'Register successfully';
+          this.snackbar.open(this.snackbarMessage, 'Close', {
+            duration: 3000,
+          });
+          this.isRegister = true;
+          this.dialog.closeAll();
 
           // Redirect to the desired page or perform any other necessary actions
-        }
+        },
+        error: (error: any) => {
+          this.isLoading = false;
+
+          // Handle login error
+
+        },
       });
 
+
+
+    };
+
 }
-}
+

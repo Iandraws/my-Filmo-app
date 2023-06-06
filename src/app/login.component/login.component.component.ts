@@ -3,8 +3,7 @@ import { AuthService } from '../service/auth.service';
 import { finalize } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { RegisterComponent } from '../register/register.component'; // Replace with the actual path to your register component
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login.component',
@@ -12,24 +11,31 @@ import { RegisterComponent } from '../register/register.component'; // Replace w
   styleUrls: ['./login.component.component.css'],
 })
 export class LoginComponentComponent implements OnInit {
+  snackbar: any;
+  constructor(
+    private authService: AuthService,
+    private dialog: MatDialog,
+    snackbar: MatSnackBar
+  ) {
+    this.snackbar = snackbar;
+  }
+  ngOnInit(): void {
+    this.checkLogin();
+    
+  }
+
   identifier: string;
   password: string;
   isLoading: boolean = false;
   isLogedIn: boolean = false;
   snackbarMessage: string = ''; // Variable to hold the Snackbar message
-  snackBar: any;
 
-  constructor(private authService: AuthService,private dialog: MatDialog) {}
-  ngOnInit(): void {
-    this.checkLogin();
-  }
 
   onSubmit(): void {
     const credentials = {
       identifier: this.identifier,
       password: this.password,
     };
-
 
     this.isLoading = true;
 
@@ -43,7 +49,11 @@ export class LoginComponentComponent implements OnInit {
           this.authService.saveAccessToken(accessToken);
           this.isLogedIn = true;
           this.isLoading = false;
-        
+          this.snackbarMessage = 'login successfully';
+          this.snackbar.open(this.snackbarMessage, 'Close', {
+            duration: 3000,
+          });
+          this.dialog.closeAll();
 
           console.log(response);
 
@@ -62,8 +72,6 @@ export class LoginComponentComponent implements OnInit {
     this.isLoading = false;
     this.identifier = '';
     this.password = '';
-
-   
   }
   checkLogin(): void {
     if (this.authService.getAccessToken()) {
@@ -76,9 +84,9 @@ export class LoginComponentComponent implements OnInit {
   }
   openRegisterDialog(): void {
     this.dialog.open(RegisterComponent, {
-      width: '400px', 
+      width: '400px',
       height: '500px',
-      disableClose: false, 
+      disableClose: false,
       autoFocus: true,
       data: { name: 'Register' },
     });

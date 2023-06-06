@@ -42,6 +42,10 @@ export class HomeComponent {
         height: '500px'
         
     });
+
+  }
+  closeRegisterDialog(): void {
+    this.dialog.closeAll();
   }
 
 
