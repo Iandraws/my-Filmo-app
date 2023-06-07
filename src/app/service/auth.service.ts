@@ -43,15 +43,17 @@ export class AuthService {
     password: string;
     active: boolean;
     isAdmin: boolean;
+    avatar: string;
+    
   }): Observable<Object> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.getAccessToken()}`,
+ 
 
 
     });
 
-    return this.http.post<Object>(`${this.apiUrl}/employees`, credentials, 
+    return this.http.post<Object>(`${this.apiUrl}/register`, credentials, 
     {headers});
   }
 }

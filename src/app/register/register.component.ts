@@ -31,6 +31,7 @@ export class RegisterComponent {
       password: this.password,
       active: this.active,
       isAdmin: this.isAdmin,
+      avatar: ""
     };
 
     this.isLoading = true;
